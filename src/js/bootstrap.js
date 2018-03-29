@@ -1,6 +1,6 @@
 // import 'bootstrap-less/js/affix.js'
 // import 'bootstrap-less/js/alert.js'
-// import 'bootstrap-less/js/button.js'
+import 'bootstrap-less/js/button.js'
 // import 'bootstrap-less/js/carousel.js'
 import 'bootstrap-less/js/collapse.js'
 // import 'bootstrap-less/js/dropdown.js'

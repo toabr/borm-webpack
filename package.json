@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server  --host 192.168.158.8",
+    "dev": "webpack-dev-server",
     "build": "npm run clean && webpack -p",
     "clean": "rimraf ./dist/*"
   },

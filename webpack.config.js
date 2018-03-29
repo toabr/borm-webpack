@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: "./dist",
+    publicPath: "dist",
     filename: "[name].min.js",
   },
   module: {
@@ -71,14 +71,13 @@ module.exports = {
     // contentBase: 'build/', // Relative directory for base of server
     // publicPath: '/',
     // inline: true,
-    // port: process.env.PORT || 3000, // Port Number
-    // host: '127.0.0.1', // Change to '0.0.0.0' for external facing server
-    // historyApiFallback: true,
+    port: process.env.PORT || 3000,
+    host: '192.168.158.8',
     stats: "errors-only",
   },
   plugins: debug ? [
     new HtmlWebpackPlugin({
-      title: 'StarterKit',
+      title: 'BORM',
       // minify: {
       //   collapseWhitespace: true
       // },
@@ -92,8 +91,8 @@ module.exports = {
      jQuery: "jquery"
     })
     ] : [
-  //   new webpack.optimize.DedupePlugin(),
-  //   new webpack.optimize.OccurenceOrderPlugin(),
-  //   new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ]
 };

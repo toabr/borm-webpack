@@ -8,13 +8,159 @@ html, body {
   background: @white;
 }
 
-#root {
+.main-container {
   width: 100%;
   min-height: 100vh;
-  background: @primary;
+  background: #efefef;
 }
 
-// Layout styles ===============================================================
-h1 {
+.container {
+  padding-bottom: 28px;
+}
 
+h1 {
+  // .row;
+  color: @white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-weight: bold;
+}
+
+.input-group-btn i {
+  line-height: unset;
+}
+
+.header {
+  .nav.navbar-nav:first-child {
+    li {
+      a:before {
+        .glyphicon;
+        padding-right: 8px;
+      }
+      &:nth-child(1) a:before {
+        content: "\e067";
+      }
+      &:nth-child(2) a:before {
+        content: "\e066";
+      }
+      &:nth-child(3) a:before {
+        content: "\e065";
+      }
+    }
+  }
+  .navbar-brand {
+    font-family: @font-family-serif;
+  }
+}
+
+.btn-book {
+  .button-variant(@primary; #efefef; #efefef);
+}
+
+// == suggestion-list styles
+// =============================================================================
+
+#suggestion-list {
+  .row;
+  display: flex;
+  flex-wrap: wrap;
+  .book {
+    .make-xs-column(6);
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(3);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    // background: rgba(255,255,255,0.2);
+    // border-bottom: 1px solid rgba(0,0,0,0.1);
+    .book-inner {
+      border: 1px solid #fff;
+      background-image: linear-gradient(to top,#fafafa 0,#fdfdfd 20%,#fff 60%);
+      box-shadow: 0 0 8px -3px @gray-dark;
+      text-align: left;
+    }
+    header {
+      .btn-primary {
+        color: @primary;
+        background: #efefef;
+        border-color: #efefef;
+        &:hover {
+          color: @white;
+          background: @primary;
+          border-color: @primary;
+        }
+        &:before {
+          content: "\e143";
+          .glyphicon;
+          font-size: 0.8em;
+          padding-right: 8px;
+        }
+      }
+    }
+    footer {
+      border-top: 2px solid @primary;
+      margin: 8px;
+      padding: 8px 0;
+    }
+  }
+  .field-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 18px;
+    .field-item {
+      position: relative;
+      z-index: 8;
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+        transition: transform .3s;
+        backface-visibility: hidden;
+        background: #bbb;
+        transform: translate3d(3px, 3px, 0);
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+        transition: transform .3s;
+        backface-visibility: hidden;
+        background: #999;
+        transform: translate3d(2px, 2px, 0);
+      }
+    }
+    img {
+      max-width: 130px;
+      border: 1px solid #ddd;
+      // box-shadow: 2px 2px 0 @gray;
+    }
+  }
+  .field-title {
+    padding: 0 8px;
+    h3 {
+      font-size: 18px;
+      // font-family: @font-family-serif;
+    }
+  }
+  .field-subtitle {
+    padding: 0 8px;
+    h5 {
+      font-size: 16px;
+      color: @gray-dark;
+    }
+  }
+  .field-isbn {
+    * {
+      display: inline;
+      color: @gray;
+      font-size: 14px;
+    }
+  }
 }

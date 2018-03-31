@@ -1,0 +1,64 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="books-grid">
+
+    <!-- Deprecated feature. This experimental feature is now deprecated in favor of style modules. It is still supported, but support will be removed in the future.
+    https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom#external-stylesheets -->
+    <link rel="import" type="css" href="../../dist/styles.css">
+
+    <template><div id="suggestion-list">
+
+        <dom-repeat items="[[books]]">
+            <template>
+                <div class="book">
+                    <div class="book-inner">
+                        <header>
+                            <div class="btn btn-primary btn-block"></div>
+                        </header>
+                        <div class="field-image">
+                            <div class="field-item">
+                                <img src="[[item.image]]">
+                            </div>
+                        </div>
+                        <div class="field-title">
+                            <div class="field-item">
+                                <h3>[[item.title]]</h3>
+                            </div>
+                        </div>
+                        <div class="field-subtitle">
+                            <div class="field-item">
+                                <h5>[[item.subTitle]]</h5>
+                            </div>
+                        </div>
+                        <footer>
+                            <div class="field-isbn">
+                                <div class="field-label">
+                                    <span>isbn: </span>
+                                </div>
+                                <div class="field-item">
+                                    <span>[[item.isbn]]</span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </template>
+        </dom-repeat>
+
+    </div></template>
+
+    <script>
+        class BooksGridElement extends Polymer.Element {
+            static get is() {
+                return 'books-grid'
+            }
+            // only for testing !!
+            ready() {
+                super.ready();
+                this.books = results;
+            }
+        }
+        customElements.define(BooksGridElement.is, BooksGridElement);
+    </script>
+
+</dom-module>

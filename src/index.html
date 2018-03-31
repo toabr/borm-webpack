@@ -2,7 +2,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <script type="text/javascript" src="./src/js/server-results.js"></script>
+
+  <link rel="import" href="./bower_components/polymer/polymer.html">
+  <link rel="import" href="./src/components/books-grid.html">
+
 </head>
 <body>
 
@@ -49,44 +56,7 @@
     <h1>Suggestions</h1>
 
     <!-- suggestions-list -->
-    <div id="suggestion-list"></div>
-
-      <template>
-        <div class="book">
-          <div class="book-inner">
-            <header>
-              <div class="btn btn-primary btn-block"></div>
-            </header>
-            <div class="field-image">
-              <div class="field-item">
-                <img src="[[item.image]]">
-              </div>
-            </div>
-            <div class="field-title">
-              <div class="field-item">
-                <h3>[[item.title]]</h3>
-              </div>
-            </div>
-            <div class="field-subtitle">
-              <div class="field-item">
-                <h5>[[item.subTitle]]</h5>
-              </div>
-            </div>
-            <footer>
-              <div class="field-isbn">
-                <div class="field-label">
-                  <span>isbn: </span>
-                </div>
-                <div class="field-item">
-                  <span>[[item.isbn]]</span>
-                </div>
-              </div>
-            </footer>
-          </div>
-        </div>
-      </template>
-
-    </div> <!-- END #sugestion-list -->
+    <books-grid></books-grid>
 
 </div> <!-- END #main-container -->
 

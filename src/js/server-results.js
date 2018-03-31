@@ -1,4 +1,5 @@
-let books = [{
+var results = [
+  {
     "id":1,
     "title":"Rumo4 CDs",
     "isbn":"9783869522791",
@@ -47,9 +48,3 @@ let books = [{
     "image":"http://books.google.com/books/content?id=2FoqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
   }
 ];
-
-function getbooks() {
-  return books;
-}
-
-module.exports = getbooks();

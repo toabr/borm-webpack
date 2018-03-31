@@ -1,0 +1,20 @@
+{
+  "name": "BKWRM",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "toabr"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/toabr/borm",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.6.0"
+  }
+}

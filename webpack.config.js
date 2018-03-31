@@ -11,12 +11,14 @@ module.exports = {
   context: __dirname,
   devtool: debug ? "inline-sourcemap" : null,
   entry: {
-    scripts: "./src/index.js",
+    // scripts: "./src/index.js",
+    app: "./src/index.js",
+    bootstrap: "./src/js/bootstrap.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "dist",
-    filename: "[name].min.js",
+    filename: "[name].bundle.js"
   },
   module: {
     rules: [{
@@ -87,8 +89,8 @@ module.exports = {
     }),
     extractLESS,
     new webpack.ProvidePlugin({
-     $: "jquery",
-     jQuery: "jquery"
+      $: "jquery",
+      jQuery: "jquery" // to big after build !!!
     })
     ] : [
     new webpack.optimize.DedupePlugin(),
